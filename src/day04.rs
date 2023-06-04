@@ -2,8 +2,9 @@ use std::fs::File;
 use std::io::BufRead;
 
 pub fn solve() {
-    let file = File::open("./inputs/day4.txt").unwrap();
+    let file = File::open("./inputs/day04.txt").unwrap();
     let lines = std::io::BufReader::new(file).lines();
+    println!("day 04!");
     let mut contain_cnt = 0;
     let mut overlap_cnt = 0;
     for line in lines {
@@ -21,5 +22,5 @@ pub fn solve() {
             }
         }
     }
-    println!("contains: {}\n overlaps: {}", contain_cnt, overlap_cnt);
+    println!("contains => {}\noverlaps => {}", contain_cnt, overlap_cnt);
 }

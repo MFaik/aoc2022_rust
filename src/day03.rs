@@ -2,8 +2,9 @@ use std::fs::File;
 use std::io::BufRead;
 
 pub fn solve() {
-    let file = File::open("./inputs/day3.txt").unwrap();
+    let file = File::open("./inputs/day03.txt").unwrap();
     let lines = std::io::BufReader::new(file).lines();
+    println!("day 03!");
     let mut priority : i64 = 0;
     //part 1
     //    for line in lines {
@@ -41,5 +42,5 @@ pub fn solve() {
             }
         }
     }
-    println!("{}", priority);
+    println!("rucksack priority => {}", priority);
 }

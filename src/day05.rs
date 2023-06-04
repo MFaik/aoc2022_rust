@@ -3,8 +3,9 @@ use std::fs::File;
 use std::io::BufRead;
 
 pub fn solve() {
-    let file = File::open("./inputs/day5.txt").unwrap();
+    let file = File::open("./inputs/day05.txt").unwrap();
     let lines = std::io::BufReader::new(file).lines();
+    println!("day 05!");
     let mut stacks = vec!(LinkedList::<u8>::new() ; 10);
     for line in lines {
         if let Ok(line) = line {
@@ -45,7 +46,9 @@ pub fn solve() {
             }
         }
     }
+    print!("text on top of the stacks => ");
     for stack in stacks {
         print!("{}",*stack.front().unwrap_or(&b' ') as char );
     }
+    println!("");
 }

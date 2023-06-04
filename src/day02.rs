@@ -2,10 +2,10 @@ use std::fs::File;
 use std::io::BufRead;
 
 pub fn solve() {
-    let file = File::open("./inputs/day2.txt").unwrap();
+    let file = File::open("./inputs/day02.txt").unwrap();
     let lines = std::io::BufReader::new(file).lines();
+    println!("day 02!");
     let mut score = 0;
-    //let lines : [Result<&str,&str>; 3] = [Ok("A Y"), Ok("B X"), Ok("C Z")];
     for line in lines {
         if let Ok(line) = line {
             if line.len() < 2 {
@@ -40,5 +40,5 @@ pub fn solve() {
             }
         }
     }
-    println!("{}", score);
+    println!("rps score => {}", score);
 }

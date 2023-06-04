@@ -2,8 +2,9 @@ use std::fs::File;
 use std::io::BufRead;
 
 pub fn solve() {
-    let file = File::open("./inputs/day6.txt").unwrap();
+    let file = File::open("./inputs/day06.txt").unwrap();
     let lines = std::io::BufReader::new(file).lines();
+    println!("day 06!");
     //part 1
     //let mark_len = 4;
     //part 2
@@ -19,7 +20,7 @@ pub fn solve() {
                         }
                     }
                 }
-                print!("{}", range+mark_len);
+                println!("mark found after {} letters", range+mark_len);
                 return;
             }
         }
