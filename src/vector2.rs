@@ -1,13 +1,13 @@
 use std::ops::Add;
 use std::ops::AddAssign;
 
-#[derive(Debug, Eq, PartialEq, Copy, Clone)]
-pub struct Vector2 {
-    pub x: i32,
-    pub y: i32
+#[derive(Debug, Eq, PartialEq, Copy, Clone, Ord, PartialOrd)]
+pub struct Vector2<T: Add + AddAssign> {
+    pub x: T,
+    pub y: T
 }
 
-impl Add for Vector2 {
+impl<T: Add<Output = T> + AddAssign> Add for Vector2<T> {
     type Output = Self;
 
     fn add(self, _rhs: Self) -> Self {
@@ -18,7 +18,7 @@ impl Add for Vector2 {
     }
 }
 
-impl AddAssign for Vector2 {
+impl<T: Add + AddAssign> AddAssign for Vector2<T> {
     fn add_assign(&mut self, _rhs: Self) {
         self.x += _rhs.x;
         self.y += _rhs.y;

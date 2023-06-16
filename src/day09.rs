@@ -9,7 +9,7 @@ pub fn solve() {
     let file = File::open("./inputs/day09.txt").unwrap();
     let lines = std::io::BufReader::new(file).lines();
     println!("day 09!");
-    let mut rope = [Vector2{x: 0, y: 0}; ROPE_LEN]; 
+    let mut rope = [Vector2::<i32>{x: 0, y: 0}; ROPE_LEN]; 
     let mut visited_places_part1 = HashSet::new();
     let mut visited_places_part2 = HashSet::new();
     for line in lines {
